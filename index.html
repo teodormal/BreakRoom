@@ -9,47 +9,109 @@
             --primary: #2c3e50;
             --accent: #d35400;
             --error: #c0392b;
-            --bg: #f9f9f9;
+            --bg: #f4f4f4;
             --card-bg: #ffffff;
             --text: #333;
         }
-        body { font-family: 'Segoe UI', Arial, sans-serif; line-height: 1.6; color: var(--text); background: var(--bg); margin: 0; padding: 20px; }
-        .container { max-width: 900px; margin: 0 auto; background: var(--card-bg); padding: 30px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); }
+        body { 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            line-height: 1.6; 
+            color: var(--text); 
+            background: var(--bg); 
+            margin: 0; 
+            padding: 20px; 
+        }
+        .container { 
+            max-width: 850px; 
+            margin: 0 auto; 
+            background: var(--card-bg); 
+            padding: 40px; 
+            border-radius: 12px; 
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05); 
+        }
         
-        header { text-align: center; border-bottom: 3px solid var(--primary); padding-bottom: 20px; margin-bottom: 30px; }
+        header { 
+            text-align: center; 
+            border-bottom: 3px solid var(--primary); 
+            padding-bottom: 25px; 
+            margin-bottom: 35px; 
+        }
         
-        /* Operating Hours Styling */
-        .op-hours { margin-bottom: 20px; }
-        .main-hours { font-weight: bold; color: #000; font-size: 1.2rem; display: block; margin-bottom: 5px; }
-        .sub-hours { color: var(--error); font-size: 0.9rem; display: block; font-weight: 500; }
-        .coffee-hours { color: #000; font-size: 0.9rem; display: block; font-weight: bold; margin-top: 5px; }
+        .op-hours { 
+            margin: 20px 0; 
+            background: #fff5f0; 
+            padding: 15px; 
+            border-radius: 8px; 
+            border: 1px solid #ffe0d0; 
+        }
+        .main-hours { font-weight: bold; color: #000; font-size: 1.1rem; display: block; margin-bottom: 5px; }
+        .sub-hours { color: var(--error); font-size: 0.85rem; display: block; font-weight: 600; text-transform: uppercase; }
+        .coffee-hours { color: #444; font-size: 0.9rem; display: block; font-weight: bold; margin-top: 5px; font-style: italic; }
 
-        /* Larger Logo Style */
-        .logo {
-            max-width: 400px; /* Increased size */
-            width: 100%;      /* Responsive scaling */
-            height: auto;
-            margin: 15px 0;
+        .logo { max-width: 350px; width: 100%; height: auto; margin-bottom: 10px; }
+        .address { font-weight: 700; color: var(--primary); margin-top: 10px; font-size: 1.1rem; letter-spacing: 0.5px; }
+
+        h1 { color: var(--primary); margin: 15px 0 5px 0; text-transform: uppercase; font-size: 1.8rem; letter-spacing: 2px; }
+        header p { margin: 0; font-weight: 400; font-size: 1.1rem; color: #777; }
+
+        section { margin-bottom: 35px; }
+        
+        /* Section Header with Badge support */
+        .section-header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            background: var(--primary); 
+            color: white;
+            border-radius: 6px; 
+            padding: 10px 15px;
+            margin-bottom: 15px; 
+        }
+        .section-header h2 { 
+            margin: 0; 
+            font-size: 1.1rem; 
+            text-transform: uppercase; 
+            letter-spacing: 1px;
+            background: none;
+            padding: 0;
+        }
+        h2.simple-header {
+            background: var(--primary);
+            color: white;
+            padding: 12px 15px;
+            border-radius: 6px;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
         }
 
-        /* Address Styling */
-        .address { font-weight: 600; color: var(--primary); margin-top: 10px; font-size: 1.1rem; }
-
-        h1 { color: var(--primary); margin: 15px 0 0 0; text-transform: uppercase; font-size: 2rem; }
-        header p { margin: 5px 0; font-weight: 500; font-size: 1.1rem; color: #555; }
-
-        h2 { background: var(--primary); color: white; padding: 10px 15px; border-radius: 4px; margin-top: 40px; font-size: 1.2rem; }
-        .menu-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
-        .item { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px dashed #ccc; padding: 8px 0; }
-        .item-name { flex: 1; font-weight: 500; padding-right: 15px; }
-        .price { font-weight: bold; color: var(--accent); white-space: nowrap; }
-        .section-header { display: flex; justify-content: space-between; align-items: center; }
-        .extra-badge { font-size: 0.8rem; background: #eee; padding: 2px 8px; border-radius: 10px; color: var(--accent); }
+        .extra-badge { 
+            font-size: 0.75rem; 
+            background: rgba(255,255,255,0.2); 
+            padding: 4px 10px; 
+            border-radius: 20px; 
+            color: white; 
+            border: 1px solid rgba(255,255,255,0.4); 
+        }
+        
+        .menu-grid { display: grid; grid-template-columns: 1fr; gap: 2px; }
+        .item { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: baseline; 
+            border-bottom: 1px dashed #eee; 
+            padding: 10px 5px; 
+            transition: background 0.2s; 
+        }
+        .item:hover { background: #fafafa; }
+        .item-name { flex: 1; font-weight: 500; padding-right: 15px; color: #444; }
+        .price { font-weight: 700; color: var(--accent); white-space: nowrap; font-family: 'Segoe UI', sans-serif; }
         
         @media (max-width: 600px) {
-            .item { flex-direction: column; }
-            .price { align-self: flex-end; margin-top: 5px; }
-            .logo { max-width: 280px; }
+            .container { padding: 20px; }
+            .section-header { flex-direction: column; align-items: flex-start; gap: 8px; }
+            .item { flex-direction: row; font-size: 0.95rem; }
         }
     </style>
 </head>
@@ -57,22 +119,20 @@
 
 <div class="container">
     <header>
-        
-
         <img src="Gemini_Generated_Image_x9vj65x9vj65x9vj.png" alt="The Break Room Logo" class="logo">
         
         <div class="address">
             ΑΛΕΞΑΝΔΡΟΥΠΟΛΕΩΣ 10 (2ος όροφος) | τηλ: 2314018931
         </div>
-	<div class="op-hours">
-            <span class="main-hours">ΔΕΥΤΕΡΑ ΜΕ ΠΑΡΑΣΚΕΥΗ 8:00 - 17:00</span>
-            <span class="sub-hours">ΠΑΡΑΓΓΕΛΙΕΣ ΦΑΓΗΤΩΝ ΜΕΧΡΙ ΤΙΣ 14:30</span>
-            <span class="sub-hours">Η ΚΟΥΖΙΝΑ ΚΛΕΙΝΕΙ ΣΤΙΣ 15:00</span>
-            <span class="sub-hours">DELIVERY 10:00 - 15:00</span>
-            <span class="coffee-hours">*Η ΜΗΧΑΝΗ ΤΟΥ ΚΑΦΕ ΚΛΕΙΝΕΙ ΣΤΙΣ 16:45*</span>
+
+        <div class="op-hours">
+            <span class="main-hours">Δευτέρα με Παρασκευή 08:00 - 17:00</span>
+            <span class="sub-hours">Παραγγελίες φαγητών έως 14:30 | Κουζίνα έως 15:00</span>
+            <span class="sub-hours">Delivery 10:00 - 15:00</span>
+            <span class="coffee-hours">* Η μηχανή του καφέ κλείνει στις 16:45 *</span>
         </div>
 
-        <h1>THE Break Room</h1>
+        <h1>The Break Room</h1>
         <p>Πλήρης Κατάλογος Προϊόντων</p>
     </header>
 
