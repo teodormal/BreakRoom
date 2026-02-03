@@ -73,6 +73,7 @@
             letter-spacing: 1px;
             background: none;
             padding: 0;
+            text-transform: none; /* Απενεργοποίηση αυτόματων κεφαλαίων */
         }
         h2.simple-header {
             background: var(--primary);
@@ -82,6 +83,7 @@
             margin-top: 0;
             margin-bottom: 15px;
             font-size: 1.1rem;
+            text-transform: none; /* Απενεργοποίηση αυτόματων κεφαλαίων */
         }
 
         .extra-badge { 
@@ -105,11 +107,76 @@
         .item:hover { background: #fafafa; }
         .item-name { flex: 1; font-weight: 500; padding-right: 15px; color: #444; }
         .price { font-weight: 700; color: var(--accent); white-space: nowrap; font-family: 'Segoe UI', sans-serif; }
+
+        /* Styling για το πλαίσιο Έξτρα Υλικά (από τη φωτογραφία) */
+        .extra-materials-box {
+            border: 2px solid var(--accent);
+            border-radius: 12px;
+            overflow: hidden;
+            margin: 40px 0 10px 0;
+            background: #fff;
+        }
+        .extra-header-bar {
+            background: var(--accent);
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .extra-header-bar h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .price-white-pill {
+            background: white;
+            color: #000;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+        .extra-body {
+            padding: 20px;
+            text-align: center;
+            line-height: 1.8;
+        }
+        .materials-text {
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 15px;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+        .special-row {
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .special-items-text {
+            font-weight: 800;
+            color: #000;
+            text-transform: uppercase;
+        }
+        .weight-price-pill {
+            border: 2px solid #333;
+            padding: 2px 12px;
+            border-radius: 15px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
         
         @media (max-width: 600px) {
             .container { padding: 20px; }
             .section-header { flex-direction: column; align-items: flex-start; gap: 8px; }
             .item { flex-direction: row; font-size: 0.95rem; }
+            .extra-header-bar { flex-direction: column; gap: 10px; text-align: center; }
         }
     </style>
 </head>
@@ -147,9 +214,7 @@
             <div class="item"><span class="item-name">Nescafe / Frappe</span><span class="price">1.80 €</span></div>
             <div class="item"><span class="item-name">Φίλτρου</span><span class="price">1.90 €</span></div>
             <div class="item"><span class="item-name">Ελληνικός Μονός / Διπλός</span><span class="price">1.70 € / 1.90 €</span></div>
-            <div class="item"><span class="item-name">Σοκολάτα Ζεστή / Κρύα</span><span class="price">2.50 €</span></div>
-            <div class="item"><span class="item-name">Σοκολάτα με γεύσεις</span><span class="price">2.90 €</span></div>
-            <div class="item"><span class="item-name">Τσάι Ζεστό</span><span class="price">1.50 €</span></div>
+            <div class="item"><span class="item-name">Τσάι Ζεστό</span><span class="price">1.70 €</span></div>
         </div>
     </section>
 
@@ -171,7 +236,7 @@
             <div class="item"><span class="item-name">Πεϊνιρλί</span><span class="price">2.60 €</span></div>
             <div class="item"><span class="item-name">Πεϊνιρλί διπλό λουκάνικο</span><span class="price">3.00 €</span></div>
             <div class="item"><span class="item-name">Κουρού πολύσπορο γαλοπούλα Philadelphia</span><span class="price">2.20 €</span></div>
-            <div class="item"><span class="item-name">Brioche Koton</span><span class="price">2.50 €</span></div>
+            <div class="item"><span class="item-name">Brioche κοτόπουλο</span><span class="price">2.50 €</span></div>
         </div>
     </section>
 
@@ -277,61 +342,78 @@
     <section>
         <div class="section-header">
             <h2>ΕΠΙΔΟΡΠΙΑ</h2>
-            
         </div>
         <div class="menu-grid">
-            <div class="item"><span class="item-name">Γιαούρτι 2%</span><span class="price">1.00 €</span></div>
-            <div class="item"><span class="item-name">Γιαούρτι 2% με μέλι και ξηρούς καρπούς</span><span class="price">1.60 €</span></div>
-            <div class="item"><span class="item-name">Harmony με κομμάτια φρούτων</span><span class="price">1.50 €</span></div>
-            <div class="item"><span class="item-name">Κρέμες βανίλια-σοκολάτα</span><span class="price">1.50 €</span></div>
-            <div class="item"><span class="item-name">Γλύκα</span><span class="price">2.00 €</span></div>
-        </div>
+            <div class="item"><span class="item-name">Γιαούρτι 2%</span><span class="price">1.50 €</span></div>
+            <div class="item"><span class="item-name">Harmony με κομμάτια φρούτων</span><span class="price">1.80 €</span></div>
+            <div class="item"><span class="item-name">Κρέμες βανίλια-σοκολάτα</span><span class="price">2.50 €</span></div>
+			<div class="item"><span class="item-name">Γιαούρτι Protein</span><span class="price">1.80 €</span></div>
+			<div class="item"><span class="item-name">Dessert Protein</span><span class="price">2.50 €</span></div>
+		</div>
     </section>
 
     <section>
         <div class="section-header">
             <h2>ΧΥΜΟΙ</h2>
-            
         </div>
         <div class="menu-grid">
-            <div class="item"><span class="item-name">Φυσικός χυμός πορτοκάλι</span><span class="price">1.90 €</span></div>
-            <div class="item"><span class="item-name">Φυσικός χυμός ρόδι</span><span class="price">1.80 €</span></div>
+            <div class="item"><span class="item-name">Φυσικός χυμός πορτοκάλι</span><span class="price">2.70 €</span></div>
             <div class="item"><span class="item-name">Χυμοί Amita</span><span class="price">1.60 €</span></div>
             <div class="item"><span class="item-name">Χυμός Amita Motion</span><span class="price">1.60 €</span></div>
-        </div>
+			<div class="item"><span class="item-name">Life</span><span class="price">2.00 €</span></div>
+		</div>
     </section>
 
     <section>
         <h2 class="simple-header">ΑΝΑΨΥΚΤΙΚΑ - ΝΕΡΑ</h2>
         <div class="menu-grid">
             <div class="item"><span class="item-name">Coca Cola - Fanta</span><span class="price">1.20 €</span></div>
-            <div class="item"><span class="item-name">Red Bull / Monster</span><span class="price">2.20 €</span></div>
-            <div class="item"><span class="item-name">Φυσικός χυμός πορτοκάλι (Μεγάλος)</span><span class="price">2.40 €</span></div>
+            <div class="item"><span class="item-name">SCHWEPPES</span><span class="price">1.30 €</span></div>
+			<div class="item"><span class="item-name">Red Bull / Monster</span><span class="price">2.20 €</span></div>
+			<div class="item"><span class="item-name">Ice tea</span><span class="price">2.00 €</span></div>
+			<div class="item"><span class="item-name">Φυσικός χυμός πορτοκάλι (Μεγάλος)</span><span class="price">2.40 €</span></div>
             <div class="item"><span class="item-name">Νερό Μικρό / Μεγάλο</span><span class="price">0.30 € / 0.80 €</span></div>
             <div class="item"><span class="item-name">Μπύρα κουτάκι</span><span class="price">1.50 €</span></div>
-        </div>
+			<div class="item"><span class="item-name">Hell</span><span class="price">1.30 €</span></div>
+	   </div>
     </section>
 
     <section>
         <h2 class="simple-header">ΣΟΚΟΛΑΤΕΣ - ΜΠΑΡΕΣ - SNACKS</h2>
         <div class="menu-grid">
-            <div class="item"><span class="item-name">Mars / Twix / Snickers</span><span class="price">1.00 €</span></div>
+            <div class="item"><span class="item-name">Mars / Twix / Snickers</span><span class="price">1.30 €</span></div>
             <div class="item"><span class="item-name">Μπάρες δημητριακών</span><span class="price">1.30 €</span></div>
-            <div class="item"><span class="item-name">Lov</span><span class="price">1.20 €</span></div>
-            <div class="item"><span class="item-name">Cookies</span><span class="price">1.30 €</span></div>
-            <div class="item"><span class="item-name">Κρουασάν γεμιστά</span><span class="price">1.50 €</span></div>
-            <div class="item"><span class="item-name">Danish</span><span class="price">1.30 €</span></div>
+            <div class="item"><span class="item-name">Cookies Soft</span><span class="price">1.30 €</span></div>
+            <div class="item"><span class="item-name">Κρουασάν γεμιστά</span><span class="price">1.60 €</span></div>
             <div class="item"><span class="item-name">Τσουρεκάκι γεμιστό</span><span class="price">1.30 €</span></div>
-            <div class="item"><span class="item-name">Chips</span><span class="price">0.80 €</span></div>
+            <div class="item"><span class="item-name">Chips</span><span class="price">1.50 €</span></div>
             <div class="item"><span class="item-name">Φιστίκια μιξ</span><span class="price">1.20 €</span></div>
             <div class="item"><span class="item-name">Αμύγδαλα</span><span class="price">1.20 €</span></div>
-            <div class="item"><span class="item-name">Cashews (Κάσιους)</span><span class="price">1.20 €</span></div>
             <div class="item"><span class="item-name">Lov Bites</span><span class="price">1.50 €</span></div>
-            <div class="item"><span class="item-name">Halls</span><span class="price">1.00 €</span></div>
-        </div>
+            <div class="item"><span class="item-name">Halls</span><span class="price">1.20 €</span></div>
+			<div class="item"><span class="item-name">Φυστίκια Μιξ</span><span class="price">1.20 €</span></div>
+		</div>
     </section>
 
-</div>
+    <div class="extra-materials-box">
+        <div class="extra-header-bar">
+            <h3>ΕΞΤΡΑ ΥΛΙΚΑ</h3>
+            <span class="price-white-pill">ΚΑΘΕ ΕΞΤΡΑ ΥΛΙΚΟ +0,60€</span>
+        </div>
+        <div class="extra-body">
+            <div class="materials-text">
+                ΖΑΜΠΟΝ, ΓΑΛΟΠΟΥΛΑ, ΜΠΕΙΚΟΝ, ΓΚΟΥΝΤΑ, ΦΕΤΑ, PHILADELPHIA,<br>
+                ΣΩΣ CAESARS, ΣΩΣ CHEF, ΜΑΓΙΟΝΕΖΑ, ΜΑΓΙΟΝΕΖΑ VEGAN,<br>
+                ΠΑΤΑΤΕΣ COUNTRY, ΝΤΟΜΑΤΑ, ΑΓΓΟΥΡΙ, ΜΙΞ ΛΑΧΑΝΙΚΩΝ,<br>
+                ΚΑΛΑΜΠΟΚΙ, ΕΛΙΕΣ, ΚΑΠΑΡΗ
+            </div>
+            
+            <div class="special-row">
+                <span class="special-items-text">ΛΩΡΙΔΑ ΚΟΤΟΠΟΥΛΟ, ΚΟΤΟΜΠΟΥΚΙΑ, ΣΩΣ ΤΟΝΟΥ</span>
+                <span class="weight-price-pill">40gr - 0,90€</span>
+            </div>
+        </div>
+    </div>
 
-</body>
+</div> </body>
 </html>
