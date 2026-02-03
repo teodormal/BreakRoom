@@ -8,6 +8,7 @@
         :root {
             --primary: #2c3e50;
             --accent: #d35400;
+            --error: #c0392b;
             --bg: #f9f9f9;
             --card-bg: #ffffff;
             --text: #333;
@@ -17,27 +18,38 @@
         
         header { text-align: center; border-bottom: 3px solid var(--primary); padding-bottom: 20px; margin-bottom: 30px; }
         
-        /* Style for the new Logo */
+        /* Operating Hours Styling */
+        .op-hours { margin-bottom: 20px; }
+        .main-hours { font-weight: bold; color: #000; font-size: 1.2rem; display: block; margin-bottom: 5px; }
+        .sub-hours { color: var(--error); font-size: 0.9rem; display: block; font-weight: 500; }
+        .coffee-hours { color: #000; font-size: 0.9rem; display: block; font-weight: bold; margin-top: 5px; }
+
+        /* Larger Logo Style */
         .logo {
-            max-width: 250px;
+            max-width: 400px; /* Increased size */
+            width: 100%;      /* Responsive scaling */
             height: auto;
-            margin-bottom: 15px;
+            margin: 15px 0;
         }
 
-        h1 { color: var(--primary); margin: 0; text-transform: uppercase; }
+        /* Address Styling */
+        .address { font-weight: 600; color: var(--primary); margin-top: 10px; font-size: 1.1rem; }
+
+        h1 { color: var(--primary); margin: 15px 0 0 0; text-transform: uppercase; font-size: 2rem; }
+        header p { margin: 5px 0; font-weight: 500; font-size: 1.1rem; color: #555; }
+
         h2 { background: var(--primary); color: white; padding: 10px 15px; border-radius: 4px; margin-top: 40px; font-size: 1.2rem; }
         .menu-grid { display: grid; grid-template-columns: 1fr; gap: 10px; }
         .item { display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px dashed #ccc; padding: 8px 0; }
         .item-name { flex: 1; font-weight: 500; padding-right: 15px; }
         .price { font-weight: bold; color: var(--accent); white-space: nowrap; }
-        .extra-info { font-size: 0.9rem; color: #666; font-style: italic; margin-bottom: 15px; }
         .section-header { display: flex; justify-content: space-between; align-items: center; }
         .extra-badge { font-size: 0.8rem; background: #eee; padding: 2px 8px; border-radius: 10px; color: var(--accent); }
         
         @media (max-width: 600px) {
             .item { flex-direction: column; }
             .price { align-self: flex-end; margin-top: 5px; }
-            .logo { max-width: 180px; } /* Slightly smaller logo on mobile */
+            .logo { max-width: 280px; }
         }
     </style>
 </head>
@@ -45,7 +57,21 @@
 
 <div class="container">
     <header>
+        
+
         <img src="Gemini_Generated_Image_x9vj65x9vj65x9vj.png" alt="The Break Room Logo" class="logo">
+        
+        <div class="address">
+            ΑΛΕΞΑΝΔΡΟΥΠΟΛΕΩΣ 10 (2ος όροφος) | τηλ: 2314018931
+        </div>
+	<div class="op-hours">
+            <span class="main-hours">ΔΕΥΤΕΡΑ ΜΕ ΠΑΡΑΣΚΕΥΗ 8:00 - 17:00</span>
+            <span class="sub-hours">ΠΑΡΑΓΓΕΛΙΕΣ ΦΑΓΗΤΩΝ ΜΕΧΡΙ ΤΙΣ 14:30</span>
+            <span class="sub-hours">Η ΚΟΥΖΙΝΑ ΚΛΕΙΝΕΙ ΣΤΙΣ 15:00</span>
+            <span class="sub-hours">DELIVERY 10:00 - 15:00</span>
+            <span class="coffee-hours">*Η ΜΗΧΑΝΗ ΤΟΥ ΚΑΦΕ ΚΛΕΙΝΕΙ ΣΤΙΣ 16:45*</span>
+        </div>
+
         <h1>THE Break Room</h1>
         <p>Πλήρης Κατάλογος Προϊόντων</p>
     </header>
@@ -53,20 +79,22 @@
     <section>
         <h2>ΠΙΤΕΣ</h2>
         <div class="menu-grid">
-            <div class="item"><span class="item-name">Κουλούρι Θεσσαλονίκης</span><span class="price">0.70 €</span></div>
+            <div class="item"><span class="item-name">Μεσογειακο</span><span class="price">2.10 €</span></div>
+			<div class="item"><span class="item-name">Κουλούρι Ζαμπον Γκούντα</span><span class="price">2.30 €</span></div>
+			<div class="item"><span class="item-name">Κουλούρι Θεσσαλονίκης</span><span class="price">0.70 €</span></div>
             <div class="item"><span class="item-name">Κουλούρι Ολικής</span><span class="price">0.80 €</span></div>
             <div class="item"><span class="item-name">Κουλούρι Γεμιστό με Philadelphia</span><span class="price">2.10 €</span></div>
             <div class="item"><span class="item-name">Κουλούρι με Ντομάτα & Ελιά (Νηστίσιμο)</span><span class="price">1.90 €</span></div>
             <div class="item"><span class="item-name">Χωριάτικη Τυρόπιτα & Σπανακότυρόπιτα</span><span class="price">2.10 €</span></div>
             <div class="item"><span class="item-name">Χωριάτικη με 4 Τυριά & Γαλοπούλα</span><span class="price">2.70 €</span></div>
             <div class="item"><span class="item-name">Brioche Διπλή Λουκανόπιτα με Κασέρι</span><span class="price">2.30 €</span></div>
-            <div class="item"><span class="item-name">Κρουασάν Ζαμπόν Κασέρι</span><span class="price">2.30 €</span></div>
+            <div class="item"><span class="item-name">Κρουασάν Ζαμπόν Κασέρι Μπέικον</span><span class="price">2.30 €</span></div>
             <div class="item"><span class="item-name">Πίτσα Ατομική Special / Χωριάτικη / Νηστίσιμη</span><span class="price">2.50 €</span></div>
             <div class="item"><span class="item-name">Καλτσόνε</span><span class="price">2.70 €</span></div>
             <div class="item"><span class="item-name">Πεϊνιρλί</span><span class="price">2.60 €</span></div>
             <div class="item"><span class="item-name">Πεϊνιρλί Διπλό Λουκάνικο</span><span class="price">3.00 €</span></div>
             <div class="item"><span class="item-name">Κουρού Πολύσπορο Γαλοπούλα Philadelphia</span><span class="price">2.20 €</span></div>
-            <div class="item"><span class="item-name">Κοτόπιτα Χορευτή Χωριάτικη</span><span class="price">2.70 €</span></div>
+            <div class="item"><span class="item-name">Brioche Koton</span><span class="price">2.50 €</span></div>
         </div>
     </section>
 
@@ -80,75 +108,99 @@
             <div class="item"><span class="item-name">Τοστ Κανονικό με 2 υλικά (Μακρόστενο με σουσάμι)</span><span class="price">2.20 €</span></div>
             <div class="item"><span class="item-name">Τοστ - Γαλλική Μπαγκέτα με 2 υλικά</span><span class="price">2.40 €</span></div>
             <div class="item"><span class="item-name">Κρύα Σάντουιτς (Μπαγκέτες με 2 υλικά)</span><span class="price">2.10 €</span></div>
-            <div class="item"><span class="item-name">Σάντουιτς Ψυγείου Panini / Cheeseburger</span><span class="price">2.30 €</span></div>
-            <div class="item"><span class="item-name">Με Λωρίδα Κοτόπουλο / Κοτομπουκιές</span><span class="price">2.30 €</span></div>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-header">
+            <h2>ΣΑΝΤΟΥΙΤΣ ΨΥΓΕΙΟΥ PANINI</h2>
+            <span class="extra-badge">Έξτρα υλικό +0,60€</span>
+        </div>
+        <div class="menu-grid">
+            <div class="item"><span class="item-name">Cheeseburger</span><span class="price">2.30 €</span></div>
+            <div class="item"><span class="item-name">Με Λωρίδα Κοτόπουλο</span><span class="price">2.30 €</span></div>
+	    <div class="item"><span class="item-name">Με κοτομπουκιές</span><span class="price">2.30 €</span></div>
             <div class="item"><span class="item-name">Κρουασάν με Γαλοπούλα & Τυρί</span><span class="price">2.30 €</span></div>
             <div class="item"><span class="item-name">Τορτίγια με Λωρίδα Κοτόπουλο</span><span class="price">2.70 €</span></div>
             <div class="item"><span class="item-name">Deli Bagel / Ρούστικ Κοτόπουλο / Μοτσαρέλα</span><span class="price">2.50 €</span></div>
         </div>
     </section>
 
+
     <section>
+        <h2>ΣΑΝΤΟΥΙΤΣ ΖΕΣΤΑ </h2>
+        <div class="menu-grid">
+            <div class="item"><span class="item-name">CHICKYS(ΚΟΤΟΜΠΟΥΚΙΕΣ, ΝΤΟΜΑΤΑ , ΜΙΞ ΛΑΧΑΝΙΚΩΝ, ΣΩΣ CEASARS</span><span class="price">3.60 €</span></div>
+            <div class="item"><span class="item-name">CLUB SANDWICH ΜΕ CHIPS</span><span class="price">3.50 €</span></div>
+			<div class="item"><span class="item-name">CLUB ΛΩΡΙΔΑ ΚΟΤΟΠΟΥΛΟ( ΜΕ ΠΑΤΑΤΕΣ COUNTRY, ΝΤΟΜΑΤΑ, ΜΙΞ ΛΑΧΑΝΙΚΩΝ & ΣΩΣ CEASARS</span><span class="price">3.50 €</span></div>
+		</div>
+    </section>
+	
+	<section>
         <h2>ΣΑΛΑΤΕΣ</h2>
         <div class="menu-grid">
             <div class="item"><span class="item-name">Μιξ Λαχανικών</span><span class="price">2.80 €</span></div>
             <div class="item"><span class="item-name">Αγγουροντομάτα</span><span class="price">3.80 €</span></div>
-            <div class="item"><span class="item-name">Χωριάτικη (Ντομάτα, Αγγούρι, Φέτα, Ελιά)</span><span class="price">4.50 €</span></div>
-            <div class="item"><span class="item-name">Τονοσαλάτα (Σως τόνου, καλαμπόκι, κάπαρη)</span><span class="price">5.00 €</span></div>
-            <div class="item"><span class="item-name">Ceasars (Κοτόπουλο, Μπέικον, Παρμεζάνα)</span><span class="price">5.00 €</span></div>
-            <div class="item"><span class="item-name">Πανδαισία (Ζαμπόν, Gouda, Σως Cocktail)</span><span class="price">5.00 €</span></div>
+            <div class="item"><span class="item-name">Χωριάτικη (Ντομάτα, Αγγούρι, Φέτα, Ελιά, extra παρθένο ελαιόλαδο)</span><span class="price">4.50 €</span></div>
+            <div class="item"><span class="item-name">Τονοσαλάτα (Σως τόνου, μιξ λαχανικών, καλαμπόκι, αγγούρι, κάπαρη)</span><span class="price">5.00 €</span></div>
+            <div class="item"><span class="item-name">Ceasars (Μιξ λαχανικών, Κοτόπουλο, Μπέικον, Παρμεζάνα, κρουτόν, σως ceasars)</span><span class="price">5.00 €</span></div>
+            <div class="item"><span class="item-name">Πανδαισία (Μιξ λαχανικών, Ζαμπόν, ντομάτα, αγγούρι, Gouda, Σως Cocktail)</span><span class="price">5.00 €</span></div>
         </div>
     </section>
-
+	
+	
     <section>
-        <h2>ΖΕΣΤΑ ΣΑΝΤΟΥΙΤΣ & ΤΟΡΤΙΓΙΕΣ</h2>
+        <h2>ΓΑΛΛΙΚΗ ΜΠΑΚΕΤΑ (Ντομάτα, μιξ λαχανικών, σως Caesars)</h2>
         <div class="menu-grid">
-            <div class="item"><span class="item-name">Chickys (Κοτομπουκιές, Σως Ceasars)</span><span class="price">4.10 €</span></div>
-            <div class="item"><span class="item-name">Club Sandwich με Chips</span><span class="price">4.00 €</span></div>
-            <div class="item"><span class="item-name">Club Λωρίδα Κοτόπουλο (με πατάτες country)</span><span class="price">5.00 €</span></div>
-            <div class="item"><span class="item-name">Μπαγκέτα με Λωρίδα Κοτόπουλο</span><span class="price">4.10 €</span></div>
-            <div class="item"><span class="item-name">Μπαγκέτα με Πατάτες Country (Κέτσαπ, Μουστάρδα)</span><span class="price">3.00 €</span></div>
-            <div class="item"><span class="item-name">Hot Dog</span><span class="price">2.50 €</span></div>
-            <div class="item"><span class="item-name">Hot Dog Διπλό</span><span class="price">3.10 €</span></div>
-            <div class="item"><span class="item-name">Τορτίγια με Λουκάνικο</span><span class="price">2.60 €</span></div>
-            <div class="item"><span class="item-name">Τορτίγια με Λωρίδες Κοτόπουλο / Κοτομπουκιές</span><span class="price">4.20 €</span></div>
-            <div class="item"><span class="item-name">Τορτίγια Light ή Νηστίσιμη</span><span class="price">2.90 €</span></div>
+            <div class="item"><span class="item-name">Με λωρίδα κοτόπουλο</span><span class="price">3.60 €</span></div>
+            <div class="item"><span class="item-name">Πατατόπιτα με πατάτες country σε μπακέτα</span><span class="price">2.20 €</span></div>
         </div>
     </section>
-
+	
     <section>
-        <h2>ΜΕΡΙΔΕΣ (Πίτα, Πατάτες Country & Σως)</h2>
+        <h2>HOT DOG (Ντομάτα, κέτσαπ, μουστάρδα))</h2>
         <div class="menu-grid">
-            <div class="item"><span class="item-name">Κοτομπουκιές 160γρ.</span><span class="price">5.50 €</span></div>
-            <div class="item"><span class="item-name">Λωρίδα Κοτόπουλο 150γρ.</span><span class="price">5.50 €</span></div>
-            <div class="item"><span class="item-name">Πατάτες Country 250γρ.</span><span class="price">3.00 €</span></div>
-            <div class="item"><span class="item-name">Πατάτες Country 150γρ.</span><span class="price">2.00 €</span></div>
-        </div>
+            <div class="item"><span class="item-name">Hot dog</span><span class="price">1.90 €</span></div>
+            <div class="item"><span class="item-name">Hot dog διπλό</span><span class="price">2.70 €</span></div>
+            <div class="item"><span class="item-name">Γαλλική μπακέτα</span><span class="price">2.40 €</span></div>	</div>
     </section>
-
+	
     <section>
+        <h2>ΤΟΡΤΙΓΙΕΣ (Ντομάτα, μιξ λαχανικών, σως)</h2>
+        <div class="menu-grid">
+            <div class="item"><span class="item-name">Με λουκάνικο</span><span class="price">2.20 €</span></div>
+            <div class="item"><span class="item-name">Με διπλό λουκάνικο</span><span class="price">3.20 €</span></div>
+            <div class="item"><span class="item-name">Με λωρίδες κοτόπουλο</span><span class="price">3.20 €</span></div>
+            <div class="item"><span class="item-name">Με κοτομπουκιές</span><span class="price">3.20 €</span></div>
+            <div class="item"><span class="item-name">Light (Philadelphia, μιξ λαχανικών, ντομάτα, αγγούρι, ελιές)</span><span class="price">2.40 €</span></div>    </section>
+	
+    <section>
+        <h2>ΜΕΡΙΔΕΣ (Πίτα, πατάτες country & σως Caesars)</h2>
+        <div class="menu-grid">
+            <div class="item"><span class="item-name">Κοτομπουκιές 160γρ</span><span class="price">4.60 €</span></div>
+            <div class="item"><span class="item-name">Λωρίδα κοτόπουλο 150γρ</span><span class="price">4.60 €</span></div>
+            <div class="item"><span class="item-name">Πατάτες country 250γρ</span><span class="price">2.60 €</span></div>
+            <div class="item"><span class="item-name">Πατάτες country 150γρ</span><span class="price">1.60 €</span></div>		</div>
+    </section>
+	
+	
+	
+	<section>
         <h2>ΚΑΦΕΣ & ΡΟΦΗΜΑΤΑ</h2>
         <div class="menu-grid">
-            <div class="item"><span class="item-name">Espresso Μονό / Διπλό</span><span class="price">1.50 € / 1.90 €</span></div>
-            <div class="item"><span class="item-name">Freddo Espresso / 4πλο</span><span class="price">1.90 € / 3.20 €</span></div>
-            <div class="item"><span class="item-name">Cappuccino Μονό / Διπλό</span><span class="price">1.70 € / 2.00 €</span></div>
-            <div class="item"><span class="item-name">Freddo Cappuccino</span><span class="price">2.00 €</span></div>
-            <div class="item"><span class="item-name">Nescafe / Frappe</span><span class="price">1.50 €</span></div>
-            <div class="item"><span class="item-name">Ελληνικός Μονός / Διπλός</span><span class="price">1.50 € / 1.70 €</span></div>
-            <div class="item"><span class="item-name">Σοκολάτα Ζεστή / Κρύα</span><span class="price">2.20 €</span></div>
+            <div class="item"><span class="item-name">Espresso Μονό / Διπλό</span><span class="price">1.50 € / 2.20 €</span></div>
+            <div class="item"><span class="item-name">Freddo Espresso / 4πλο</span><span class="price">2.20 € / 3.30 €</span></div>
+            <div class="item"><span class="item-name">Cappuccino Μονό / Διπλό</span><span class="price">1.80 € / 2.30 €</span></div>
+            <div class="item"><span class="item-name">Freddo Cappuccino</span><span class="price">2.30 €</span></div>
+	    <div class="item"><span class="item-name">Americano Μονό / Διπλό </span><span class="price">1.50 € / 2.20 €</span></div>
+            <div class="item"><span class="item-name">Macchiato Μονός</span><span class="price">1.70 €</span></div>
+            <div class="item"><span class="item-name">Latte Μονό / Διπλό </span><span class="price">2.10 € / 2.40 €</span></div>
+            <div class="item"><span class="item-name">Nescafe / Frappe</span><span class="price">1.80 €</span></div>
+            <div class="item"><span class="item-name">Φίλτρου</span><span class="price">1.90 €</span></div>
+            <div class="item"><span class="item-name">Ελληνικός Μονός / Διπλός</span><span class="price">1.70 € / 1.90 €</span></div>
+            <div class="item"><span class="item-name">Σοκολάτα Ζεστή / Κρύα</span><span class="price">2.50 €</span></div>
+	    <div class="item"><span class="item-name">Σοκολάτα με γεύσεις</span><span class="price">2.90 €</span></div>
             <div class="item"><span class="item-name">Τσάι Ζεστό</span><span class="price">1.50 €</span></div>
-        </div>
-    </section>
-
-    <section>
-        <h2>ΕΠΙΔΟΡΠΙΑ & SNACKS</h2>
-        <div class="menu-grid">
-            <div class="item"><span class="item-name">Γιαούρτι Complet 2%</span><span class="price">1.00 €</span></div>
-            <div class="item"><span class="item-name">Γιαούρτι με Μέλι & Ξηρούς Καρπούς</span><span class="price">2.00 €</span></div>
-            <div class="item"><span class="item-name">Κρέμες (Βανίλια, Σοκολάτα, Καραμέλα)</span><span class="price">2.50 €</span></div>
-            <div class="item"><span class="item-name">Mars / Twix / Snickers</span><span class="price">1.20 €</span></div>
-            <div class="item"><span class="item-name">Μπάρες / Cookies / Danish</span><span class="price">1.30 €</span></div>
-            <div class="item"><span class="item-name">Chips / Lov Bites</span><span class="price">1.50 €</span></div>
         </div>
     </section>
 
@@ -162,6 +214,10 @@
             <div class="item"><span class="item-name">Μπύρα Κουτάκι</span><span class="price">1.50 €</span></div>
         </div>
     </section>
+
+	
+	
+
 
 </div>
 
